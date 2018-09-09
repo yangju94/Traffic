@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title%}欢迎来到交通事故录入系统{% endblock %}
+{% block  content %}
+    {% for element in elements %}
+        <p style="font-family: 微软雅黑;font-size: 18pt;font-weight:bold;">
+            <a href="{% url "showelement-url" element.id %}">{{ element.NAME }}</a>
+        </p>
+    {% endfor %}
+{% endblock %}

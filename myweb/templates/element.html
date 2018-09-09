@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title%}
+    {{ element.NAME }}详细信息
+{% endblock %}
+{% block headmessage %}
+    <div class="container" align="center">
+    <h3>{{ element.NAME }}</h3>
+    <a href="/">Back Index</a>
+    </div>
+{% endblock %}
+{% block  content %}
+    <div class="container" align="center">
+    <p style="font-family: 微软雅黑;font-size: 12pt;letter-spacing: 2pt;">
+        <table width="400" border="1" bgcolor="#ccffcc">
+        <tr>
+            <th>SAS名称</th>
+            <th>案件具体参数</th>
+            <th>备注</th>
+        </tr>
+        <tr><td>NAME</td><td>{{ element.NAME }}</td><td>案件名称</td></tr>
+        <tr><td>VEH_NO</td><td>{{ vehicle.VEH_NO }}</td><td>车辆编号</td></tr>
+{#        <tr><td></td><td>{{  }}</td>{{  }}</tr>#}
+{#        <tr><td></td><td>{{  }}</td>{{  }}</tr>#}
+        </table><hr>
+
+    <tr><td align="center">
+        {% for image in images %}
+            <tr><td align="center">lets begin!</td></tr>
+            <img src="images/刚度系数.png"><br>
+            youmeiyou
+{#            {% empty %}#}
+{#            <tr><td align="center">暂无交通事故现场图</td></tr>#}
+        {% endfor %}
+     </td></tr>
+        mission success!
+    </p>
+    </div>
+{% endblock %}

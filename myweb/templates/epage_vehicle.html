@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}车辆信息{% endblock %}
+{% block content %}
+    <div class="container">
+    {% if message %}
+    <div class="alert alert-warning">{{ message }}</div>
+    {% endif %}
+
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand" align="center">
+                案例录入
+            </div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/epage">基本信息</a> </li>
+            <li class="active"><a href="/epage/vehicle">车辆信息</a> </li>
+            <li><a href="/epage/person">人员信息</a> </li>
+            <li><a href="/epage/photo">现场照片</a> </li>
+        </ul>
+    </div>
+
+    </nav>
+    <form name="myform_vehicle" action="/epage/vehicle" method="post">
+        {% csrf_token %}
+        <p>
+            {{ element_page_vehicle.as_p }}
+        </p>
+        <input type="submit" value="提交">
+        <input type="reset" value="清除">
+    </form>
+
+    </div>
+{% endblock %}
